@@ -1,35 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import FilterableProductTable from "./components/ui/FilterableProductTable";
+import "./App.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+const products = [
+  { category: "과일", price: "1,500 원", stocked: true, name: "사과" },
+  { category: "과일", price: "1,500 원", stocked: true, name: "포도" },
+  { category: "과일", price: "3,000 원", stocked: false, name: "자두" },
+  { category: "채소", price: "3,000 원", stocked: true, name: "시금치" },
+  { category: "채소", price: "6,000 원", stocked: false, name: "고구마" },
+  { category: "채소", price: "1,500 원", stocked: true, name: "무" }
+];
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+export default function App() {
+  return <div className="market-board">
+    <h1>🥬 우리동네 야채가게 🍎</h1>
+    <FilterableProductTable products={products} />
+  </div>
 }
-
-export default App

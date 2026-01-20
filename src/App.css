@@ -1,42 +1,147 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Main Container mimicking a wooden board */
+.market-board {
+    background-color: #deb887;
+    /* Burlywood/Tan */
+    padding: 40px;
+    border-radius: 15px;
+    border: 4px solid #8d6e63;
+    /* Brown border */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    position: relative;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Nails on the board corners (pseudo-elements if desired, but keeping it simple for now) */
+.market-board::before,
+.market-board::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 12px;
+    height: 12px;
+    background-color: #5d4037;
+    border-radius: 50%;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.market-board::before {
+    left: 15px;
 }
 
-.card {
-  padding: 2em;
+.market-board::after {
+    right: 15px;
 }
 
-.read-the-docs {
-  color: #888;
+/* Search Bar Area */
+form {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff8e1;
+    /* Light yellow paper feel */
+    border-radius: 8px;
+    border: 2px dashed #8d6e63;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #8d6e63;
+    border-radius: 4px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+    box-sizing: border-box;
+    /* Fix padding issue */
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #ff9800;
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+}
+
+label {
+    font-size: 0.9rem;
+    color: #5d4037;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+input[type="checkbox"] {
+    accent-color: #ff9800;
+    width: 18px;
+    height: 18px;
+}
+
+/* Product Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: 10px;
+}
+
+thead th {
+    padding: 10px;
+    background-color: #5d4037;
+    color: #fff8e1;
+    font-family: 'Jua', sans-serif;
+    font-size: 1.2rem;
+    border-radius: 4px;
+}
+
+/* Rows styling */
+tbody tr {
+    background-color: #fff;
+    transition: transform 0.2s;
+}
+
+/* Category Headers */
+th[colspan="2"] {
+    background-color: #2e7d32;
+    /* Green for freshness */
+    color: #fff;
+    padding: 8px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+/* Product Rows */
+td {
+    padding: 12px;
+    border-bottom: 2px solid #efebe9;
+    color: #3e2723;
+    font-weight: 600;
+}
+
+/* Rounded corners for rows */
+tbody tr td:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+tbody tr td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Hover effect on product rows */
+tbody tr:not(:has(th)):hover {
+    transform: scale(1.02);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff3e0;
+}
+
+/* Out of Stock styling */
+span[style*="color: red"] {
+    color: #d32f2f !important;
+    text-decoration: line-through;
+    opacity: 0.7;
 }

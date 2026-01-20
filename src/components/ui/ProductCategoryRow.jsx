@@ -1,7 +1,7 @@
 export default function ProductCategoryRow({ category }) {
     return <>
-        <div>
-            <div>{category}</div>
-        </div>
+        <tr>
+            <td colSpan="2">{category}</td>
+        </tr>
     </>
 }
