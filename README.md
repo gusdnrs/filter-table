@@ -1,16 +1,23 @@
-# React + Vite
+# Filter Table (우리동네 야채가게)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React로 구현한 식료품 필터링 및 검색 테이블 애플리케이션입니다.
 
-Currently, two official plugins are available:
+## 📋 프로젝트 소개
+사용자가 상품명으로 검색하거나 재고가 있는 상품만 필터링하여 볼 수 있는 "우리동네 야채가게" 상품 목록입니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ 기능
+- **실시간 검색**: 검색어를 입력하면 해당 상품이 실시간으로 필터링됩니다.
+- **재고 필터**: 체크박스를 통해 '재고가 있는 상품'만 모아볼 수 있습니다.
+- **카테고리 분류**: 상품들이 과일/채소 등의 카테고리로 구분되어 표시됩니다.
+- **품절 표시**: 재고가 없는 상품은 빨간색으로 표시됩니다.
 
-## React Compiler
+## 🛠 기술 스택
+- **React**: 컴포넌트 기반 UI 구축
+- **Vite**: 빠른 개발 환경 및 빌드
+- **CSS**: 스타일링
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 실행 방법
+\`\`\`bash
+npm install
+npm run dev
+\`\`\`
